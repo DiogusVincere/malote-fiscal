@@ -21,6 +21,8 @@ jobs:
             python: "3.12"
     runs-on: ${{ matrix.os }}
     name: ${{ matrix.os }} · Python ${{ matrix.python }}
+    env:
+      PYTHONUTF8: "1"   # o console do Windows é cp1252 e a demonstração imprime acentos e setas
 
     steps:
       - uses: actions/checkout@v4

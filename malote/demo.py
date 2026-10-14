@@ -13,6 +13,7 @@ planilha de controle. Devolve um dicionário com os números (os testes conferem
 from __future__ import annotations
 
 import argparse
+import sys
 import tempfile
 from datetime import date, datetime
 from pathlib import Path
@@ -187,6 +188,10 @@ def main(argv: list[str] | None = None) -> int:
     args = p.parse_args(argv)
     hoje = date.fromisoformat(args.hoje) if args.hoje else None
     pasta = args.pasta or Path(tempfile.gettempdir()) / "malote-fiscal-demo"
+    try:  # console cp1252 do Windows: imprime o que der em vez de parar numa seta
+        sys.stdout.reconfigure(errors="replace")
+    except (AttributeError, ValueError):
+        pass
     rodar(pasta, hoje)
     return 0
 
