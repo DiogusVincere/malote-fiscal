@@ -20,7 +20,7 @@ class Campos(unittest.TestCase):
         texto = L.texto_do_html(html)
         self.assertEqual(texto, "Boa tarde!\n\nSua empresa **tomou** serviço em 09/2026 (Setembro de 2026)?\n- sim\n- não\n\nAtt,")
         self.assertEqual(L.para_layout(texto, (2026, 9)),
-                         "{saudacao}!\n\nSua empresa **tomou** serviço em {mes} ({mes_nome} de {ano})?\n\n- sim\n- não\n\nAtt,")
+                         "{saudacao}!\n\nSua empresa **tomou** serviço em {mes} ({mes_nome} de {ano})?\n- sim\n- não\n\nAtt,")
 
     def test_html(self):
         html = L.html("Olá <você>\nlinha 2\n\n- item **forte**\n- outro\n\nFim", '<img src="cid:ass">')
