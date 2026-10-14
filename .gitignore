@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+
+# Dados de quem usa (ficam em %LOCALAPPDATA%\Malote Fiscal; se alguém rodar com --dados aqui, não sobem)
+dados/
+controle/
+config.json
+registro.json
+cadastro.json
+aprendizado.json
+layouts.json
+*.log
+
+# Demonstração montada localmente
+demo/
+
+# Pacote portátil (python build\empacotar.py)
+dist/
+build/pyinstaller/
+
+# Planilhas geradas na hora (a demonstração cria a sua)
+*.xlsx
+
+# Editores e sistema
+.vscode/
+.idea/
+Thumbs.db
+desktop.ini
+.DS_Store
